@@ -8,7 +8,6 @@ Created on Fri Mar 26 15:03:53 2021
 import xlrd
 import json
 
-
 def read_student_excel(filename):
     data = xlrd.open_workbook(filename)
     table = data.sheets()[0]
@@ -95,4 +94,3 @@ def generate_subject_list(file):  # 生成一份科目列表
 
     print('文件 科目列表.json 已生成')
 
-read_student_excel
