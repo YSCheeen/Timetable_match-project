@@ -13,3 +13,7 @@ def show_results(teacher_A, teacher_B, teachers_slot, candidate_students, teache
 
     window = sg.Window('Window Title', layout, finalize=True)
     window.read()
+
+
+
+

@@ -22,3 +22,4 @@ def select_subject():
     window.close()
     tomatch_subject = values['-LIST-'][0]
     return tomatch_subject
+

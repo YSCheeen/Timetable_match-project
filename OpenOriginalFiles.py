@@ -34,3 +34,4 @@ def open_teacher_file():
         sg.popup('文件已生成')
         readexcel.generate_subject_list(teacher_file)
         sg.popup('科目列表已生成')
+
