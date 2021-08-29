@@ -3,7 +3,6 @@ import readexcel
 import sys
 
 
-
 def open_student_file():
     if len(sys.argv) == 1:
         student_file = sg.popup_get_file('选择要打开的学生数据excel文件')

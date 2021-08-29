@@ -94,3 +94,4 @@ def generate_subject_list(file):  # 生成一份科目列表
 
     print('文件 科目列表.json 已生成')
 
+
