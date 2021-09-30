@@ -9,7 +9,7 @@ def show_results(teacher_A, teacher_B, teachers_slot, candidate_students, teache
               [sg.MLine(teachers_slots_detail, key='-ML1-', size=(40, 20)),
                sg.MLine(candidate_student_list, key='-ML2-', size=(60, 20))],
 
-              [sg.Button('Exit')]]
+              [sg.Button('下一步')]]
 
     window = sg.Window('Window Title', layout, finalize=True)
     window.read()

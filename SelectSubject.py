@@ -7,13 +7,13 @@ def select_subject():
 
     layout = [[sg.Text('选择学科(点一下就选上了)')],
               [sg.Listbox(subjects_list, size=(40, 8), enable_events=True, key='-LIST-')],
-              [sg.Button('Exit')]]
+              [sg.Button('下一步')]]
 
     window = sg.Window('Listbox for selecting subject', layout)
     # Event Loop
     while True:
         event, values = window.read()
-        if event in (sg.WIN_CLOSED, 'Exit'):  # always check for closed window
+        if event in (sg.WIN_CLOSED, '下一步'):  # always check for closed window
             break
         # if a list item is chosen
         elif event == '-LIST-' and len(values['-LIST-']):

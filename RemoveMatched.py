@@ -8,7 +8,10 @@ def student_remove_input_window():
     justification = 'l'  # start left justified
 
     layout = [[sg.Text('输入已经匹配好的学生的ID，以半角逗号分割')],
-              [sg.Text('注意：1.最后一个不加逗号；2.不要加任何空格。')],
+              [sg.Text('ID输入注意事项：')],
+              [sg.Text('1.最后一个不加逗号；')],
+              [sg.Text('2.不要加任何空格；')],
+              [sg.Text('3.如想跳过这一步，可输入一个空格。')],
               [sg.Multiline(size=(40, 10), key='-MLINE-', justification=justification, enable_events=True,
                             autoscroll=True)],
               # We'll be fancy and allow user to choose which justification to use in the demo
@@ -32,7 +35,10 @@ def teacher_remove_input_window():
     justification = 'l'  # start left justified
 
     layout = [[sg.Text('输入已达匹配上限的老师姓名缩写，以半角逗号分割')],
-              [sg.Text('注意：1.最后一个不加逗号；2.不要加任何空格。')],
+              [sg.Text('首字母缩写输入注意事项：')],
+              [sg.Text('1.最后一个不加逗号；')],
+              [sg.Text('2.不要加任何空格；')],
+              [sg.Text('3.如想跳过这一步，可输入一个空格。')],
               [sg.Multiline(size=(40, 10), key='-MLINE-', justification=justification, enable_events=True,
                             autoscroll=True)],
               # We'll be fancy and allow user to choose which justification to use in the demo
@@ -67,18 +73,19 @@ def renew_student_candidate_list(tomatch_subject, student_list):
     key = '#ID'
     matched_students_string = student_remove_input_window()
     toremove_students_list = turn_into_list(matched_students_string)
-    if toremove_students_list == []:
+    if not toremove_students_list:
         sg.popup('没有输入任何内容')
     else:
         renewed_student_list = tomatchfile.remove_matched(toremove_students_list, student_list, key)
         tomatchfile.renew_student_candidatelist(tomatch_subject, renewed_student_list)  # 更新学生列表的json文件
 
+
 def renew_teacher_candidate_list(tomatch_subject, teacher_list):
-    key = 'Initials'
+    key2 = 'Initials'
     matched_teachers_string = teacher_remove_input_window()
     toremove_teachers_list = turn_into_list(matched_teachers_string)
     if not toremove_teachers_list:
         sg.popup('没有输入已匹配老师')
     else:
-        renewed_teacher_list = tomatchfile.remove_matched(toremove_teachers_list, teacher_list, key)
-        tomatchfile.renew_student_candidatelist(tomatch_subject, renewed_teacher_list)  # 更新老师列表的json文件
+        renewed_teacher_list = tomatchfile.remove_matched(toremove_teachers_list, teacher_list, key2)
+        tomatchfile.renew_teacher_list(tomatch_subject, renewed_teacher_list)  # 更新老师列表的json文件
