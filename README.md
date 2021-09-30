@@ -1,12 +1,12 @@
 # Timetable_match-project
-Not sure how to use github or write codes...Hence, this is not a standard readme, but just used as instructions for my classmates who will help me later...
+READ ME
 
-需求说明：
-1. 源文件：excel 文件
-A - students timetable.xls
-B - teacher timetable.xls
+需要点击运行的文件：</br>
+☑️ Process 1 <br/>
+用于打开Excel格式的课程表源文件，运行后会生成Process2需要用到的json文件（总数：13）<br> 所以运行Process 1后可检查一下是否文件生成完毕，再运行Process 2。<br>
 
-2. 匹配要求描述：
-共两轮匹配
-第一轮：一个学生对一个老师，只要是个老师都可以[未定]；
-第二轮：一个学生对两个老师；老师必须是该学生申请专业相关的老师；每个老师参加的面试数量是有限额的，一般不超过6个。 
+☑️ Process 2 <br>
+用于完成和显示匹配结果<br>
+流程：选择科目 - 选择科目下的两位老师组合 - 显示复合该组合重合空闲时间段的候选学生ID及时间段 - 【人工完成匹配】- 将已匹配学生的ID输入以删去 - 输入已匹配教师的姓名缩写以删去
+
+其他文件无需运行，请视作空气（但一定要放在同一个目录下哦）
